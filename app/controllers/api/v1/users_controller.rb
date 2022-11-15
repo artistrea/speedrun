@@ -40,7 +40,7 @@ class Api::V1::UsersController < ApplicationController
 
         raise 'Login inválido' if user == nil || !user.valid_password?(login_params[:password])
 
-        render json: user, status: :ok
+        render json: user, serializer: SessionSerializer, status: :ok
     rescue StandardError => e
         render json: e, status: :unauthorized
     end
