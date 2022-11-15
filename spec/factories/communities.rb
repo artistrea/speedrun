@@ -2,6 +2,6 @@ FactoryBot.define do
   factory :community do
     name { "MyString" }
     description { "MyText" }
-    theme { nil }
+    theme { association(:theme) }
   end
 end
