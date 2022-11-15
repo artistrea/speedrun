@@ -13,6 +13,14 @@ Rails.application.routes.draw do
         post 'login', to: 'users#login'
         post 'logout', to: 'users#logout'
       end
+
+      scope 'friendships' do
+        get '/', to: 'friendships#index'
+        get 'show/:id', to: 'friendships#show'
+        post 'create', to: 'friendships#create'
+        patch 'update/:id', to: 'friendships#update'
+        delete 'delete/:id', to: 'friendships#delete'
+      end
     end
   end
 end
